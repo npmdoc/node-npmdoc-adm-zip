@@ -1,0 +1,649 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="http://github.com/cthackers/adm-zip"
+
+    >adm-zip (v0.4.7)</a>
+</h1>
+<h4>A Javascript implementation of zip for nodejs. Allows user to create or extract zip files both in memory or to/from disk</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.adm-zip">module adm-zip</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">adm-zip.</span>utils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.adm-zip.utils">module adm-zip.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.utils.FileAttr">
+            function <span class="apidocSignatureSpan">adm-zip.utils.</span>FileAttr
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.utils.crc32">
+            function <span class="apidocSignatureSpan">adm-zip.utils.</span>crc32
+            <span class="apidocSignatureSpan">(buf)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.utils.findFiles">
+            function <span class="apidocSignatureSpan">adm-zip.utils.</span>findFiles
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.utils.getAttributes">
+            function <span class="apidocSignatureSpan">adm-zip.utils.</span>getAttributes
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.utils.makeDir">
+            function <span class="apidocSignatureSpan">adm-zip.utils.</span>makeDir
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.utils.methodToString">
+            function <span class="apidocSignatureSpan">adm-zip.utils.</span>methodToString
+            <span class="apidocSignatureSpan">(method)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.utils.setAttributes">
+            function <span class="apidocSignatureSpan">adm-zip.utils.</span>setAttributes
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.utils.toBuffer">
+            function <span class="apidocSignatureSpan">adm-zip.utils.</span>toBuffer
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.utils.writeFileTo">
+            function <span class="apidocSignatureSpan">adm-zip.utils.</span>writeFileTo
+            <span class="apidocSignatureSpan">(path, content, overwrite, attr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.utils.writeFileToAsync">
+            function <span class="apidocSignatureSpan">adm-zip.utils.</span>writeFileToAsync
+            <span class="apidocSignatureSpan">(path, content, overwrite, attr, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">adm-zip.utils.</span>Constants</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">adm-zip.utils.</span>Errors</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.adm-zip" id="apidoc.module.adm-zip">module adm-zip</a></h1>
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.adm-zip.utils" id="apidoc.module.adm-zip.utils">module adm-zip.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.utils.FileAttr" id="apidoc.element.adm-zip.utils.FileAttr">
+        function <span class="apidocSignatureSpan">adm-zip.utils.</span>FileAttr
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">FileAttr = function (path) {
+
+    var _path = path || &#x22;&#x22;,
+        _permissions = 0,
+        _obj = newAttr(),
+        _stat = null;
+
+    function newAttr() {
+        return {
+            directory : false,
+            readonly : false,
+            hidden : false,
+            executable : false,
+            mtime : 0,
+            atime : 0
+        }
+    }
+
+    if (_path &#x26;&#x26; fs.existsSync(_path)) {
+        _stat = fs.statSync(_path);
+        _obj.directory = _stat.isDirectory();
+        _obj.mtime = _stat.mtime;
+        _obj.atime = _stat.atime;
+        _obj.executable = !!(1 &#x26; parseInt ((_stat.mode &#x26; parseInt (&#x22;777&#x22;, 8)).toString (8)[0]));
+        _obj.readonly = !!(2 &#x26; parseInt ((_stat.mode &#x26; parseInt (&#x22;777&#x22;, 8)).toString (8)[0]));
+        _obj.hidden = pth.basename(_path)[0] === &#x22;.&#x22;;
+    } else {
+        console.warn(&#x22;Invalid path: &#x22; + _path)
+    }
+
+    return {
+
+        get directory () {
+            return _obj.directory;
+        },
+
+        get readOnly () {
+            return _obj.readonly;
+        },
+
+        get hidden () {
+            return _obj.hidden;
+        },
+
+        get mtime () {
+            return _obj.mtime;
+        },
+
+        get atime () {
+           return _obj.atime;
+        },
+
+
+        get executable () {
+            return _obj.executable;
+        },
+
+        decodeAttributes : function(val) {
+
+        },
+
+        encodeAttributes : function (val) {
+
+        },
+
+        toString : function() {
+           return &#x27;{\n&#x27; +
+               &#x27;\t&#x22;path&#x22; : &#x22;&#x27; + _path + &#x22;,\n&#x22; +
+               &#x27;\t&#x22;isDirectory&#x22; : &#x27; + _obj.directory + &#x22;,\n&#x22; +
+               &#x27;\t&#x22;isReadOnly&#x22; : &#x27; + _obj.readonly + &#x22;,\n&#x22; +
+               &#x27;\t&#x22;isHidden&#x22; : &#x27; + _obj.hidden + &#x22;,\n&#x22; +
+               &#x27;\t&#x22;isExecutable&#x22; : &#x27; + _obj.executable + &#x22;,\n&#x22; +
+               &#x27;\t&#x22;mTime&#x22; : &#x27; + _obj.mtime + &#x22;\n&#x22; +
+               &#x27;\t&#x22;aTime&#x22; : &#x27; + _obj.atime + &#x22;\n&#x22; +
+           &#x27;}&#x27;;
+        }
+    }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.utils.crc32" id="apidoc.element.adm-zip.utils.crc32">
+        function <span class="apidocSignatureSpan">adm-zip.utils.</span>crc32
+        <span class="apidocSignatureSpan">(buf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">crc32 = function (buf) {
+    var b = new Buffer(4);
+    if (!crcTable.length) {
+        for (var n = 0; n &#x3c; 256; n++) {
+            var c = n;
+            for (var k = 8; --k &#x3e;= 0;)  //
+                if ((c &#x26; 1) != 0)  { c = 0xedb88320 ^ (c &#x3e;&#x3e;&#x3e; 1); } else { c = c &#x3e;&#x3e;&#x3e; 1; }
+            if (c &#x3c; 0) {
+                b.writeInt32LE(c, 0);
+                c = b.readUInt32LE(0);
+            }
+            crcTable[n] = c;
+        }
+    }
+    var crc = 0, off = 0, len = buf.length, c1 = ~crc;
+    while(--len &#x3e;= 0) c1 = crcTable[(c1 ^ buf[off++]) &#x26; 0xff] ^ (c1 &#x3e;&#x3e;&#x3e; 8);
+    crc = ~c1;
+    b.writeInt32LE(crc &#x26; 0xffffffff, 0);
+    return b.readUInt32LE(0);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    _entryHeader.loadDataHeaderFromBinary(input);
+    return input.slice(_entryHeader.realDataOffset, _entryHeader.realDataOffset + _entryHeader.compressedSize)
+}
+
+function crc32OK(data) {
+    // if bit 3 (0x08) of the general-purpose flags field is set, then the CRC-32 and file sizes are not known when the header is
+ written
+    if (_entryHeader.flags &#x26; 0x8 != 0x8) {
+       if (Utils.<span class="apidocCodeKeywordSpan">crc32</span>(data) != _entryHeader.crc) {
+           return false;
+       }
+    } else {
+        // @TODO: load and check data descriptor header
+        // The fields in the local header are filled with zero, and the CRC-32 and size are appended in a 12-byte structure
+        // (optionally preceded by a 4-byte signature) immediately after the compressed data:
+    }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.utils.findFiles" id="apidoc.element.adm-zip.utils.findFiles">
+        function <span class="apidocSignatureSpan">adm-zip.utils.</span>findFiles
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">findFiles = function (path) {
+    return findSync(path, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			localPath = localPath.split(&#x22;\\&#x22;).join(&#x22;/&#x22;); //windows fix
+            localPath = pth.normalize(localPath);
+            if (localPath.charAt(localPath.length - 1) != &#x22;/&#x22;)
+                localPath += &#x22;/&#x22;;
+
+            if (fs.existsSync(localPath)) {
+
+                var items = Utils.<span class="apidocCodeKeywordSpan">findFiles</span>(localPath),
+                    self = this;
+
+                if (items.length) {
+                    items.forEach(function(path) {
+						var p = path.split(&#x22;\\&#x22;).join(&#x22;/&#x22;).replace( new RegExp(localPath, &#x27;i&#x27;), &#x22;&#x22;); //windows
+ fix
+if (filter(p)) {
+    if (p.charAt(p.length - 1) !== &#x22;/&#x22;) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.utils.getAttributes" id="apidoc.element.adm-zip.utils.getAttributes">
+        function <span class="apidocSignatureSpan">adm-zip.utils.</span>getAttributes
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getAttributes = function (path) {
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.utils.makeDir" id="apidoc.element.adm-zip.utils.makeDir">
+        function <span class="apidocSignatureSpan">adm-zip.utils.</span>makeDir
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">makeDir = function (path) {
+    mkdirSync(path);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+overwrite = overwrite || false;
+if (!_zip) {
+    throw Utils.Errors.NO_ZIP;
+}
+
+_zip.entries.forEach(function(entry) {
+    if (entry.isDirectory) {
+        Utils.<span class="apidocCodeKeywordSpan">makeDir</span>(pth.resolve(targetPath, entry.entryName.toString()));
+        return;
+    }
+    var content = entry.getData();
+    if (!content) {
+        throw Utils.Errors.CANT_EXTRACT_FILE + &#x22;2&#x22;;
+    }
+    Utils.writeFileTo(pth.resolve(targetPath, entry.entryName.toString()), content, overwrite);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.utils.methodToString" id="apidoc.element.adm-zip.utils.methodToString">
+        function <span class="apidocSignatureSpan">adm-zip.utils.</span>methodToString
+        <span class="apidocSignatureSpan">(method)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">methodToString = function (method) {
+    switch (method) {
+        case Constants.STORED:
+            return &#x27;STORED (&#x27; + method + &#x27;)&#x27;;
+        case Constants.DEFLATED:
+            return &#x27;DEFLATED (&#x27; + method + &#x27;)&#x27;;
+        default:
+            return &#x27;UNSUPPORTED (&#x27; + method + &#x27;)&#x27;;
+    }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+},
+
+toString : function() {
+    return &#x27;{\n&#x27; +
+        &#x27;\t&#x22;made&#x22; : &#x27; + _verMade + &#x22;,\n&#x22; +
+        &#x27;\t&#x22;version&#x22; : &#x27; + _version + &#x22;,\n&#x22; +
+        &#x27;\t&#x22;flags&#x22; : &#x27; + _flags + &#x22;,\n&#x22; +
+        &#x27;\t&#x22;method&#x22; : &#x27; + Utils.<span class="apidocCodeKeywordSpan">methodToString</span>(_method) + &#x22;,\n&#x22; +
+        &#x27;\t&#x22;time&#x22; : &#x27; + _time + &#x22;,\n&#x22; +
+        &#x27;\t&#x22;crc&#x22; : 0x&#x27; + _crc.toString(16).toUpperCase() + &#x22;,\n&#x22; +
+        &#x27;\t&#x22;compressedSize&#x22; : &#x27; + _compressedSize + &#x22; bytes,\n&#x22; +
+        &#x27;\t&#x22;size&#x22; : &#x27; + _size + &#x22; bytes,\n&#x22; +
+        &#x27;\t&#x22;fileNameLength&#x22; : &#x27; + _fnameLen + &#x22;,\n&#x22; +
+        &#x27;\t&#x22;extraLength&#x22; : &#x27; + _extraLen + &#x22; bytes,\n&#x22; +
+        &#x27;\t&#x22;commentLength&#x22; : &#x27; + _comLen + &#x22; bytes,\n&#x22; +
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.utils.setAttributes" id="apidoc.element.adm-zip.utils.setAttributes">
+        function <span class="apidocSignatureSpan">adm-zip.utils.</span>setAttributes
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setAttributes = function (path) {
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.utils.toBuffer" id="apidoc.element.adm-zip.utils.toBuffer">
+        function <span class="apidocSignatureSpan">adm-zip.utils.</span>toBuffer
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toBuffer = function (input) {
+    if (Buffer.isBuffer(input)) {
+        return input;
+    } else {
+        if (input.length == 0) {
+            return new Buffer(0)
+        }
+        return new Buffer(input, &#x27;utf8&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	var zip = new AdmZip();
+	
+	// add file directly
+	zip.addFile(&#x22;test.txt&#x22;, new Buffer(&#x22;inner content of the file&#x22;), &#x22;entry comment goes here&#x22;);
+	// add local file
+	zip.addLocalFile(&#x22;/home/me/some_picture.png&#x22;);
+	// get everything as a buffer
+	var willSendthis = zip.<span class="apidocCodeKeywordSpan">toBuffer</span>();
+	// or write everything to disk
+	zip.writeZip(/*target file name*/&#x22;/home/me/files.zip&#x22;);
+	
+	
+	// ... more examples in the wiki
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.utils.writeFileTo" id="apidoc.element.adm-zip.utils.writeFileTo">
+        function <span class="apidocSignatureSpan">adm-zip.utils.</span>writeFileTo
+        <span class="apidocSignatureSpan">(path, content, overwrite, attr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeFileTo = function (path, content, overwrite, attr) {
+    if (fs.existsSync(path)) {
+        if (!overwrite)
+            return false; // cannot overwite
+
+        var stat = fs.statSync(path);
+        if (stat.isDirectory()) {
+            return false;
+        }
+    }
+    var folder = pth.dirname(path);
+    if (!fs.existsSync(folder)) {
+        mkdirSync(folder);
+    }
+
+    var fd;
+    try {
+        fd = fs.openSync(path, &#x27;w&#x27;, 438); // 0666
+    } catch(e) {
+        fs.chmodSync(path, 438);
+        fd = fs.openSync(path, &#x27;w&#x27;, 438);
+    }
+    if (fd) {
+        fs.writeSync(fd, content, 0, content.length, 0);
+        fs.closeSync(fd);
+    }
+    fs.chmodSync(path, attr || 438);
+    return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    var children = _zip.getEntryChildren(item);
+    children.forEach(function(child) {
+        if (child.isDirectory) return;
+        var content = child.getData();
+        if (!content) {
+            throw Utils.Errors.CANT_EXTRACT_FILE;
+        }
+        Utils.<span class="apidocCodeKeywordSpan">writeFileTo</span>(pth.resolve(targetPath, maintainEntryPath ? child.entryName
+ : child.entryName.substr(item.entryName.length)), content, overwrite);
+    });
+    return true;
+}
+
+var content = item.getData();
+if (!content) throw Utils.Errors.CANT_EXTRACT_FILE;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.utils.writeFileToAsync" id="apidoc.element.adm-zip.utils.writeFileToAsync">
+        function <span class="apidocSignatureSpan">adm-zip.utils.</span>writeFileToAsync
+        <span class="apidocSignatureSpan">(path, content, overwrite, attr, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeFileToAsync = function (path, content, overwrite, attr, callback) {
+    if(typeof attr === &#x27;function&#x27;) {
+        callback = attr;
+        attr = undefined;
+    }
+
+    fs.exists(path, function(exists) {
+        if(exists &#x26;&#x26; !overwrite)
+            return callback(false);
+
+        fs.stat(path, function(err, stat) {
+            if(exists &#x26;&#x26;stat.isDirectory()) {
+                return callback(false);
+            }
+
+            var folder = pth.dirname(path);
+            fs.exists(folder, function(exists) {
+                if(!exists)
+                    mkdirSync(folder);
+
+                fs.open(path, &#x27;w&#x27;, 438, function(err, fd) {
+                    if(err) {
+                        fs.chmod(path, 438, function(err) {
+                            fs.open(path, &#x27;w&#x27;, 438, function(err, fd) {
+                                fs.write(fd, content, 0, content.length, 0, function(err, written, buffer) {
+                                    fs.close(fd, function(err) {
+                                        fs.chmod(path, attr || 438, function() {
+                                            callback(true);
+                                        })
+                                    });
+                                });
+                            });
+                        })
+                    } else {
+                        if(fd) {
+                            fs.write(fd, content, 0, content.length, 0, function(err, written, buffer) {
+                                fs.close(fd, function(err) {
+                                    fs.chmod(path, attr || 438, function() {
+                                        callback(true);
+                                    })
+                                });
+                            });
+                        } else {
+                            fs.chmod(path, attr || 438, function() {
+                                callback(true);
+                            })
+                        }
+                    }
+                });
+            })
+        })
+    })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+                entry.getDataAsync(function(content) {
+                    if(i &#x3c;= 0) return;
+                    if (!content) {
+i = 0;
+callback(new Error(Utils.Errors.CANT_EXTRACT_FILE + &#x22;2&#x22;));
+return;
+                    }
+                    Utils.<span class="apidocCodeKeywordSpan">writeFileToAsync</span>(pth.resolve(targetPath, entry.entryName.toString
+()), content, overwrite, function(succ) {
+if(i &#x3c;= 0) return;
+
+if(!succ) {
+    i = 0;
+    callback(new Error(&#x27;Unable to write&#x27;));
+    return;
+}
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
