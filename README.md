@@ -3,7 +3,7 @@
 
 [![NPM](https://nodei.co/npm/adm-zip.png?downloads=true)](https://www.npmjs.com/package/adm-zip)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-adm-zip/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-adm-zip_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-adm-zip/build..beta..travis-ci.org/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-adm-zip/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-adm-zip_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-adm-zip/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-adm-zip/build/screenCapture.npmPackageListing.svg)
 
