@@ -1,0 +1,2350 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="http://github.com/cthackers/adm-zip">adm-zip (v0.4.7)</a>
+</h1>
+<h4>A Javascript implementation of zip for nodejs. Allows user to create or extract zip files both in memory or to/from disk</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.adm-zip">module adm-zip</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.adm-zip">
+            function <span class="apidocSignatureSpan"></span>adm-zip
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.deflater">
+            function <span class="apidocSignatureSpan">adm-zip.</span>deflater
+            <span class="apidocSignatureSpan">(inbuf)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.entryHeader">
+            function <span class="apidocSignatureSpan">adm-zip.</span>entryHeader
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.fattr">
+            function <span class="apidocSignatureSpan">adm-zip.</span>fattr
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.inflater">
+            function <span class="apidocSignatureSpan">adm-zip.</span>inflater
+            <span class="apidocSignatureSpan">(inbuf)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.mainHeader">
+            function <span class="apidocSignatureSpan">adm-zip.</span>mainHeader
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.toString">
+            function <span class="apidocSignatureSpan">adm-zip.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.zipEntry">
+            function <span class="apidocSignatureSpan">adm-zip.</span>zipEntry
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.zipFile">
+            function <span class="apidocSignatureSpan">adm-zip.</span>zipFile
+            <span class="apidocSignatureSpan">(input, inputType)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">adm-zip.</span>utils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.adm-zip.deflater">module adm-zip.deflater</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.deflater.deflater">
+            function <span class="apidocSignatureSpan">adm-zip.</span>deflater
+            <span class="apidocSignatureSpan">(inbuf)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.adm-zip.entryHeader">module adm-zip.entryHeader</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.entryHeader.entryHeader">
+            function <span class="apidocSignatureSpan">adm-zip.</span>entryHeader
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.adm-zip.fattr">module adm-zip.fattr</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.fattr.fattr">
+            function <span class="apidocSignatureSpan">adm-zip.</span>fattr
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.adm-zip.inflater">module adm-zip.inflater</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.inflater.inflater">
+            function <span class="apidocSignatureSpan">adm-zip.</span>inflater
+            <span class="apidocSignatureSpan">(inbuf)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.adm-zip.mainHeader">module adm-zip.mainHeader</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.mainHeader.mainHeader">
+            function <span class="apidocSignatureSpan">adm-zip.</span>mainHeader
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.adm-zip.toString">module adm-zip.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.toString.toString">
+            function <span class="apidocSignatureSpan">adm-zip.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.adm-zip.utils">module adm-zip.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.utils.FileAttr">
+            function <span class="apidocSignatureSpan">adm-zip.utils.</span>FileAttr
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.utils.crc32">
+            function <span class="apidocSignatureSpan">adm-zip.utils.</span>crc32
+            <span class="apidocSignatureSpan">(buf)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.utils.findFiles">
+            function <span class="apidocSignatureSpan">adm-zip.utils.</span>findFiles
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.utils.getAttributes">
+            function <span class="apidocSignatureSpan">adm-zip.utils.</span>getAttributes
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.utils.makeDir">
+            function <span class="apidocSignatureSpan">adm-zip.utils.</span>makeDir
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.utils.methodToString">
+            function <span class="apidocSignatureSpan">adm-zip.utils.</span>methodToString
+            <span class="apidocSignatureSpan">(method)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.utils.setAttributes">
+            function <span class="apidocSignatureSpan">adm-zip.utils.</span>setAttributes
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.utils.toBuffer">
+            function <span class="apidocSignatureSpan">adm-zip.utils.</span>toBuffer
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.utils.writeFileTo">
+            function <span class="apidocSignatureSpan">adm-zip.utils.</span>writeFileTo
+            <span class="apidocSignatureSpan">(path, content, overwrite, attr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.utils.writeFileToAsync">
+            function <span class="apidocSignatureSpan">adm-zip.utils.</span>writeFileToAsync
+            <span class="apidocSignatureSpan">(path, content, overwrite, attr, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">adm-zip.utils.</span>Constants</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">adm-zip.utils.</span>Errors</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.adm-zip.zipEntry">module adm-zip.zipEntry</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.zipEntry.zipEntry">
+            function <span class="apidocSignatureSpan">adm-zip.</span>zipEntry
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.adm-zip.zipFile">module adm-zip.zipFile</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.adm-zip.zipFile.zipFile">
+            function <span class="apidocSignatureSpan">adm-zip.</span>zipFile
+            <span class="apidocSignatureSpan">(input, inputType)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.adm-zip" id="apidoc.module.adm-zip">module adm-zip</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.adm-zip" id="apidoc.element.adm-zip.adm-zip">
+        function <span class="apidocSignatureSpan"></span>adm-zip
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">adm-zip = function (input) {
+    var _zip = undefined,
+        _filename = "";
+
+    if (input &amp;&amp; typeof input === "string") { // load zip file
+        if (fs.existsSync(input)) {
+            _filename = input;
+            _zip = new ZipFile(input, Utils.Constants.FILE);
+        } else {
+           throw Utils.Errors.INVALID_FILENAME;
+        }
+    } else if(input &amp;&amp; Buffer.isBuffer(input)) { // load buffer
+        _zip = new ZipFile(input, Utils.Constants.BUFFER);
+    } else { // create new zip file
+        _zip = new ZipFile(null, Utils.Constants.NONE);
+    }
+
+    function getEntry(/*Object*/entry) {
+        if (entry &amp;&amp; _zip) {
+            var item;
+            // If entry was given as a file name
+            if (typeof entry === "string")
+                item = _zip.getEntry(entry);
+            // if entry was given as a ZipEntry object
+            if (typeof entry === "object" &amp;&amp; entry.entryName != undefined &amp;&amp; entry.header != undefined)
+                item =  _zip.getEntry(entry.entryName);
+
+            if (item) {
+                return item;
+            }
+        }
+        return null;
+    }
+
+    return {
+        /**
+         * Extracts the given entry from the archive and returns the content as a Buffer object
+         * @param entry ZipEntry object or String with the full path of the entry
+         *
+         * @return Buffer or Null in case of error
+         */
+        readFile : function(/*Object*/entry) {
+            var item = getEntry(entry);
+            return item &amp;&amp; item.getData() || null;
+        },
+
+        /**
+         * Asynchronous readFile
+         * @param entry ZipEntry object or String with the full path of the entry
+         * @param callback
+         *
+         * @return Buffer or Null in case of error
+         */
+        readFileAsync : function(/*Object*/entry, /*Function*/callback) {
+            var item = getEntry(entry);
+            if (item) {
+                item.getDataAsync(callback);
+            } else {
+                callback(null,"getEntry failed for:" + entry)
+            }
+        },
+
+        /**
+         * Extracts the given entry from the archive and returns the content as plain text in the given encoding
+         * @param entry ZipEntry object or String with the full path of the entry
+         * @param encoding Optional. If no encoding is specified utf8 is used
+         *
+         * @return String
+         */
+        readAsText : function(/*Object*/entry, /*String - Optional*/encoding) {
+            var item = getEntry(entry);
+            if (item) {
+                var data = item.getData();
+                if (data &amp;&amp; data.length) {
+                    return data.toString(encoding || "utf8");
+                }
+            }
+            return "";
+        },
+
+        /**
+         * Asynchronous readAsText
+         * @param entry ZipEntry object or String with the full path of the entry
+         * @param callback
+         * @param encoding Optional. If no encoding is specified utf8 is used
+         *
+         * @return String
+         */
+        readAsTextAsync : function(/*Object*/entry, /*Function*/callback, /*String - Optional*/encoding) {
+            var item = getEntry(entry);
+            if (item) {
+                item.getDataAsync(function(data) {
+                    if (data &amp;&amp; data.length) {
+                        callback(data.toString(encoding || "utf8"));
+                    } else {
+                        callback("");
+                    }
+                })
+            } else {
+                callback("");
+            }
+        },
+
+        /**
+         * Remove the entry from the file or the entry and all it's nested directories and files if the given entry is a directory
+         *
+         * @param entry
+         */
+        deleteFile : function(/*Object*/entry) { // @TODO: test deleteFile
+            var item = getEntry(entry);
+            if (item) {
+                _zip.deleteEntry(item.entryName);
+            }
+        },
+
+        /** ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.deflater" id="apidoc.element.adm-zip.deflater">
+        function <span class="apidocSignatureSpan">adm-zip.</span>deflater
+        <span class="apidocSignatureSpan">(inbuf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deflater = function (inbuf) {
+
+    var zlib = require("zlib");
+
+    return {
+        deflate: function () {
+            return new JSDeflater(inbuf).deflate();
+        },
+
+        deflateAsync: function (/*Function*/callback) {
+            var tmp = zlib.createDeflateRaw({chunkSize:(parseInt(inbuf.length / 1024) + 1)*1024}),
+                parts = [], total = 0;
+            tmp.on('data', function(data) {
+                parts.push(data);
+                total += data.length;
+            });
+            tmp.on('end', function() {
+                var buf = new Buffer(total), written = 0;
+                buf.fill(0);
+
+                for (var i = 0; i &lt; parts.length; i++) {
+                    var part = parts[i];
+                    part.copy(buf, written);
+                    written += part.length;
+                }
+                callback &amp;&amp; callback(buf);
+            });
+            tmp.end(inbuf);
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.entryHeader" id="apidoc.element.adm-zip.entryHeader">
+        function <span class="apidocSignatureSpan">adm-zip.</span>entryHeader
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">entryHeader = function () {
+    var _verMade = 0x0A,
+        _version = 0x0A,
+        _flags = 0,
+        _method = 0,
+        _time = 0,
+        _crc = 0,
+        _compressedSize = 0,
+        _size = 0,
+        _fnameLen = 0,
+        _extraLen = 0,
+
+        _comLen = 0,
+        _diskStart = 0,
+        _inattr = 0,
+        _attr = 0,
+        _offset = 0;
+
+    var _dataHeader = {};
+
+    function setTime(val) {
+        var val = new Date(val);
+        _time = (val.getFullYear() - 1980 &amp; 0x7f) &lt;&lt; 25  // b09-16 years from 1980
+            | (val.getMonth() + 1) &lt;&lt; 21                 // b05-08 month
+            | val.getDay() &lt;&lt; 16                         // b00-04 hour
+
+            // 2 bytes time
+            | val.getHours() &lt;&lt; 11    // b11-15 hour
+            | val.getMinutes() &lt;&lt; 5   // b05-10 minute
+            | val.getSeconds() &gt;&gt; 1;  // b00-04 seconds divided by 2
+    }
+
+    setTime(+new Date());
+
+    return {
+        get made () { return _verMade; },
+        set made (val) { _verMade = val; },
+
+        get version () { return _version; },
+        set version (val) { _version = val },
+
+        get flags () { return _flags },
+        set flags (val) { _flags = val; },
+
+        get method () { return _method; },
+        set method (val) { _method = val; },
+
+        get time () { return new Date(
+            ((_time &gt;&gt; 25) &amp; 0x7f) + 1980,
+            ((_time &gt;&gt; 21) &amp; 0x0f) - 1,
+            (_time &gt;&gt; 16) &amp; 0x1f,
+            (_time &gt;&gt; 11) &amp; 0x1f,
+            (_time &gt;&gt; 5) &amp; 0x3f,
+            (_time &amp; 0x1f) &lt;&lt; 1
+        );
+        },
+        set time (val) {
+            setTime(val);
+        },
+
+        get crc () { return _crc; },
+        set crc (val) { _crc = val; },
+
+        get compressedSize () { return _compressedSize; },
+        set compressedSize (val) { _compressedSize = val; },
+
+        get size () { return _size; },
+        set size (val) { _size = val; },
+
+        get fileNameLength () { return _fnameLen; },
+        set fileNameLength (val) { _fnameLen = val; },
+
+        get extraLength () { return _extraLen },
+        set extraLength (val) { _extraLen = val; },
+
+        get commentLength () { return _comLen },
+        set commentLength (val) { _comLen = val },
+
+        get diskNumStart () { return _diskStart },
+        set diskNumStart (val) { _diskStart = val },
+
+        get inAttr () { return _inattr },
+        set inAttr (val) { _inattr = val },
+
+        get attr () { return _attr },
+        set attr (val) { _attr = val },
+
+        get offset () { return _offset },
+        set offset (val) { _offset = val },
+
+        get encripted () { return (_flags &amp; 1) == 1 },
+
+        get entryHeaderSize () {
+            return Constants.CENHDR + _fnameLen + _extraLen + _comLen;
+        },
+
+        get realDataOffset () {
+            return _offset + Constants.LOCHDR + _dataHeader.fnameLen + _dataHeader.extraLen;
+        },
+
+        get dataHeader () {
+            return _dataHeader;
+        },
+
+        loadDataHeaderFromBinary : function(/*Buffer*/input) {
+            var data = input.slice(_offset, _offset + Constants.LOCHDR);
+            // 30 bytes and should start with "PK\003\004"
+            if (data.readUInt32LE(0) != Constants.LOCSIG) {
+                throw Utils.Errors.INVALID_LOC;
+            }
+            _dataHeader = {
+                // version needed to extract
+                version : data.readUInt16LE(Constants.LOCVER),
+                // general purpose bit flag
+                flags : data.readUInt16LE(Constants.LOCFLG),
+                // compression method
+                method : data.readUInt16LE(Constants.LOCHOW),
+                // modification time (2 bytes time, 2 bytes date)
+                time : data.readUInt32LE(Constants.LOCTIM),
+                // uncompressed file crc-32 value
+                crc : data.readUInt32LE(Constants.LOCCRC),
+                // compressed size
+                compressedSize : data.readUInt32LE(Constants.LOCSIZ),
+                // uncompressed size ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.fattr" id="apidoc.element.adm-zip.fattr">
+        function <span class="apidocSignatureSpan">adm-zip.</span>fattr
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fattr = function (path) {
+
+    var _path = path || "",
+        _permissions = 0,
+        _obj = newAttr(),
+        _stat = null;
+
+    function newAttr() {
+        return {
+            directory : false,
+            readonly : false,
+            hidden : false,
+            executable : false,
+            mtime : 0,
+            atime : 0
+        }
+    }
+
+    if (_path &amp;&amp; fs.existsSync(_path)) {
+        _stat = fs.statSync(_path);
+        _obj.directory = _stat.isDirectory();
+        _obj.mtime = _stat.mtime;
+        _obj.atime = _stat.atime;
+        _obj.executable = !!(1 &amp; parseInt ((_stat.mode &amp; parseInt ("777", 8)).toString (8)[0]));
+        _obj.readonly = !!(2 &amp; parseInt ((_stat.mode &amp; parseInt ("777", 8)).toString (8)[0]));
+        _obj.hidden = pth.basename(_path)[0] === ".";
+    } else {
+        console.warn("Invalid path: " + _path)
+    }
+
+    return {
+
+        get directory () {
+            return _obj.directory;
+        },
+
+        get readOnly () {
+            return _obj.readonly;
+        },
+
+        get hidden () {
+            return _obj.hidden;
+        },
+
+        get mtime () {
+            return _obj.mtime;
+        },
+
+        get atime () {
+           return _obj.atime;
+        },
+
+
+        get executable () {
+            return _obj.executable;
+        },
+
+        decodeAttributes : function(val) {
+
+        },
+
+        encodeAttributes : function (val) {
+
+        },
+
+        toString : function() {
+           return '{\n' +
+               '\t"path" : "' + _path + ",\n" +
+               '\t"isDirectory" : ' + _obj.directory + ",\n" +
+               '\t"isReadOnly" : ' + _obj.readonly + ",\n" +
+               '\t"isHidden" : ' + _obj.hidden + ",\n" +
+               '\t"isExecutable" : ' + _obj.executable + ",\n" +
+               '\t"mTime" : ' + _obj.mtime + "\n" +
+               '\t"aTime" : ' + _obj.atime + "\n" +
+           '}';
+        }
+    }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.inflater" id="apidoc.element.adm-zip.inflater">
+        function <span class="apidocSignatureSpan">adm-zip.</span>inflater
+        <span class="apidocSignatureSpan">(inbuf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inflater = function (inbuf) {
+    var zlib = require("zlib");
+    return {
+        inflateAsync : function(/*Function*/callback) {
+            var tmp = zlib.createInflateRaw(),
+                parts = [], total = 0;
+            tmp.on('data', function(data) {
+                parts.push(data);
+                total += data.length;
+            });
+            tmp.on('end', function() {
+                var buf = new Buffer(total), written = 0;
+                buf.fill(0);
+
+                for (var i = 0; i &lt; parts.length; i++) {
+                    var part = parts[i];
+                    part.copy(buf, written);
+                    written += part.length;
+                }
+                callback &amp;&amp; callback(buf);
+            });
+            tmp.end(inbuf)
+        },
+
+        inflate : function(/*Buffer*/outputBuffer) {
+            var x = {
+                x: new JSInflater(inbuf)
+            };
+            x.x.inflate(outputBuffer);
+            delete(x.x);
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.mainHeader" id="apidoc.element.adm-zip.mainHeader">
+        function <span class="apidocSignatureSpan">adm-zip.</span>mainHeader
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mainHeader = function () {
+    var _volumeEntries = 0,
+        _totalEntries = 0,
+        _size = 0,
+        _offset = 0,
+        _commentLength = 0;
+
+    return {
+        get diskEntries () { return _volumeEntries },
+        set diskEntries (/*Number*/val) { _volumeEntries = _totalEntries = val; },
+
+        get totalEntries () { return _totalEntries },
+        set totalEntries (/*Number*/val) { _totalEntries = _volumeEntries = val; },
+
+        get size () { return _size },
+        set size (/*Number*/val) { _size = val; },
+
+        get offset () { return _offset },
+        set offset (/*Number*/val) { _offset = val; },
+
+        get commentLength () { return _commentLength },
+        set commentLength (/*Number*/val) { _commentLength = val; },
+
+        get mainHeaderSize () {
+            return Constants.ENDHDR + _commentLength;
+        },
+
+        loadFromBinary : function(/*Buffer*/data) {
+            // data should be 22 bytes and start with "PK 05 06"
+            if (data.length != Constants.ENDHDR || data.readUInt32LE(0) != Constants.ENDSIG)
+                throw Utils.Errors.INVALID_END;
+
+            // number of entries on this volume
+            _volumeEntries = data.readUInt16LE(Constants.ENDSUB);
+            // total number of entries
+            _totalEntries = data.readUInt16LE(Constants.ENDTOT);
+            // central directory size in bytes
+            _size = data.readUInt32LE(Constants.ENDSIZ);
+            // offset of first CEN header
+            _offset = data.readUInt32LE(Constants.ENDOFF);
+            // zip file comment length
+            _commentLength = data.readUInt16LE(Constants.ENDCOM);
+        },
+
+        toBinary : function() {
+           var b = new Buffer(Constants.ENDHDR + _commentLength);
+            // "PK 05 06" signature
+            b.writeUInt32LE(Constants.ENDSIG, 0);
+            b.writeUInt32LE(0, 4);
+            // number of entries on this volume
+            b.writeUInt16LE(_volumeEntries, Constants.ENDSUB);
+            // total number of entries
+            b.writeUInt16LE(_totalEntries, Constants.ENDTOT);
+            // central directory size in bytes
+            b.writeUInt32LE(_size, Constants.ENDSIZ);
+            // offset of first CEN header
+            b.writeUInt32LE(_offset, Constants.ENDOFF);
+            // zip file comment length
+            b.writeUInt16LE(_commentLength, Constants.ENDCOM);
+            // fill comment memory with spaces so no garbage is left there
+            b.fill(" ", Constants.ENDHDR);
+
+            return b;
+        },
+
+        toString : function() {
+            return '{\n' +
+                '\t"diskEntries" : ' + _volumeEntries + ",\n" +
+                '\t"totalEntries" : ' + _totalEntries + ",\n" +
+                '\t"size" : ' + _size + " bytes,\n" +
+                '\t"offset" : 0x' + _offset.toString(16).toUpperCase() + ",\n" +
+                '\t"commentLength" : 0x' + _commentLength + "\n" +
+            '}';
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.toString" id="apidoc.element.adm-zip.toString">
+        function <span class="apidocSignatureSpan">adm-zip.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	var AdmZip = require('adm-zip');
+
+	// reading archives
+	var zip = new AdmZip("./my_file.zip");
+	var zipEntries = zip.getEntries(); // an array of ZipEntry records
+
+	zipEntries.forEach(function(zipEntry) {
+	    console.log(zipEntry.<span class="apidocCodeKeywordSpan">toString</span>()); // outputs zip entries information
+		if (zipEntry.entryName == "my_file.txt") {
+		     console.log(zipEntry.data.toString('utf8'));
+		}
+	});
+	// outputs the content of some_folder/my_file.txt
+	console.log(zip.readAsText("some_folder/my_file.txt"));
+	// extracts the specified file to the specified location
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.zipEntry" id="apidoc.element.adm-zip.zipEntry">
+        function <span class="apidocSignatureSpan">adm-zip.</span>zipEntry
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">zipEntry = function (input) {
+
+    var _entryHeader = new Headers.EntryHeader(),
+        _entryName = new Buffer(0),
+        _comment = new Buffer(0),
+        _isDirectory = false,
+        uncompressedData = null,
+        _extra = new Buffer(0);
+
+    function getCompressedDataFromZip() {
+        if (!input || !Buffer.isBuffer(input)) {
+            return new Buffer(0);
+        }
+        _entryHeader.loadDataHeaderFromBinary(input);
+        return input.slice(_entryHeader.realDataOffset, _entryHeader.realDataOffset + _entryHeader.compressedSize)
+    }
+
+    function crc32OK(data) {
+        // if bit 3 (0x08) of the general-purpose flags field is set, then the CRC-32 and file sizes are not known when the header
+ is written
+        if (_entryHeader.flags &amp; 0x8 != 0x8) {
+           if (Utils.crc32(data) != _entryHeader.crc) {
+               return false;
+           }
+        } else {
+            // @TODO: load and check data descriptor header
+            // The fields in the local header are filled with zero, and the CRC-32 and size are appended in a 12-byte structure
+            // (optionally preceded by a 4-byte signature) immediately after the compressed data:
+        }
+        return true;
+    }
+
+    function decompress(/*Boolean*/async, /*Function*/callback, /*String*/pass) {
+        if(typeof callback === 'undefined' &amp;&amp; typeof async === 'string') {
+            pass=async;
+            async=void 0;
+        }
+        if (_isDirectory) {
+            if (async &amp;&amp; callback) {
+                callback(new Buffer(0), Utils.Errors.DIRECTORY_CONTENT_ERROR); //si added error.
+            }
+            return new Buffer(0);
+        }
+
+        var compressedData = getCompressedDataFromZip();
+
+        if (compressedData.length == 0) {
+            if (async &amp;&amp; callback) callback(compressedData, Utils.Errors.NO_DATA);//si added error.
+            return compressedData;
+        }
+
+        var data = new Buffer(_entryHeader.size);
+        data.fill(0);
+
+        switch (_entryHeader.method) {
+            case Utils.Constants.STORED:
+                compressedData.copy(data);
+                if (!crc32OK(data)) {
+                    if (async &amp;&amp; callback) callback(data, Utils.Errors.BAD_CRC);//si added error
+                    return Utils.Errors.BAD_CRC;
+                } else {//si added otherwise did not seem to return data.
+                    if (async &amp;&amp; callback) callback(data);
+                    return data;
+                }
+                break;
+            case Utils.Constants.DEFLATED:
+                var inflater = new Methods.Inflater(compressedData);
+                if (!async) {
+                    inflater.inflate(data);
+                    if (!crc32OK(data)) {
+                        console.warn(Utils.Errors.BAD_CRC + " " + _entryName.toString())
+                    }
+                    return data;
+                } else {
+                    inflater.inflateAsync(function(result) {
+                        result.copy(data, 0);
+                        if (!crc32OK(data)) {
+                            if (callback) callback(data, Utils.Errors.BAD_CRC); //si added error
+                        } else { //si added otherwise did not seem to return data.
+                            if (callback) callback(data);
+                        }
+                    })
+                }
+                break;
+            default:
+                if (async &amp;&amp; callback) callback(new Buffer(0), Utils.Errors.UNKNOWN_METHOD);
+                return Utils.Errors.UNKNOWN_METHOD;
+        }
+    }
+
+    function compress(/*Boolean*/async, /*Function*/callback) {
+        if ((!uncompressedData || !uncompressedData.length) &amp;&amp; Buffer.isBuffer(input)) {
+            // no data set or the data wasn't changed to require recompression
+            if (async &amp;&amp; callback) callback(getCompressedDataFromZip());
+            return getCompressedDataFromZip();
+        }
+
+        if (uncompressedData.length &amp;&amp; !_isDirectory) {
+            var compressedD ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.zipFile" id="apidoc.element.adm-zip.zipFile">
+        function <span class="apidocSignatureSpan">adm-zip.</span>zipFile
+        <span class="apidocSignatureSpan">(input, inputType)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">zipFile = function (input, inputType) {
+    var entryList = [],
+        entryTable = {},
+        _comment = new Buffer(0),
+        filename = "",
+        fs = require("fs"),
+        inBuffer = null,
+        mainHeader = new Headers.MainHeader();
+
+    if (inputType == Utils.Constants.FILE) {
+        // is a filename
+        filename = input;
+        inBuffer = fs.readFileSync(filename);
+        readMainHeader();
+    } else if (inputType == Utils.Constants.BUFFER) {
+        // is a memory buffer
+        inBuffer = input;
+        readMainHeader();
+    } else {
+        // none. is a new file
+    }
+
+    function readEntries() {
+        entryTable = {};
+        entryList = new Array(mainHeader.diskEntries);  // total number of entries
+        var index = mainHeader.offset;  // offset of first CEN header
+        for(var i = 0; i &lt; entryList.length; i++) {
+
+            var tmp = index,
+                entry = new ZipEntry(inBuffer);
+            entry.header = inBuffer.slice(tmp, tmp += Utils.Constants.CENHDR);
+
+            entry.entryName = inBuffer.slice(tmp, tmp += entry.header.fileNameLength);
+
+            if (entry.header.extraLength) {
+                entry.extra = inBuffer.slice(tmp, tmp += entry.header.extraLength);
+            }
+
+            if (entry.header.commentLength)
+                entry.comment = inBuffer.slice(tmp, tmp + entry.header.commentLength);
+
+            index += entry.header.entryHeaderSize;
+
+            entryList[i] = entry;
+            entryTable[entry.entryName] = entry;
+        }
+    }
+
+    function readMainHeader() {
+        var i = inBuffer.length - Utils.Constants.ENDHDR, // END header size
+            n = Math.max(0, i - 0xFFFF), // 0xFFFF is the max zip file comment length
+            endOffset = -1; // Start offset of the END header
+
+        for (i; i &gt;= n; i--) {
+            if (inBuffer[i] != 0x50) continue; // quick check that the byte is 'P'
+            if (inBuffer.readUInt32LE(i) == Utils.Constants.ENDSIG) { // "PK\005\006"
+                endOffset = i;
+                break;
+            }
+        }
+        if (!~endOffset)
+            throw Utils.Errors.INVALID_FORMAT;
+
+        mainHeader.loadFromBinary(inBuffer.slice(endOffset, endOffset + Utils.Constants.ENDHDR));
+        if (mainHeader.commentLength) {
+            _comment = inBuffer.slice(endOffset + Utils.Constants.ENDHDR);
+        }
+        readEntries();
+    }
+
+    return {
+        /**
+         * Returns an array of ZipEntry objects existent in the current opened archive
+         * @return Array
+         */
+        get entries () {
+            return entryList;
+        },
+
+        /**
+         * Archive comment
+         * @return {String}
+         */
+        get comment () { return _comment.toString(); },
+        set comment(val) {
+            mainHeader.commentLength = val.length;
+            _comment = val;
+        },
+
+        /**
+         * Returns a reference to the entry with the given name or null if entry is inexistent
+         *
+         * @param entryName
+         * @return ZipEntry
+         */
+        getEntry : function(/*String*/entryName) {
+            return entryTable[entryName] || null;
+        },
+
+        /**
+         * Adds the given entry to the entry list
+         *
+         * @param entry
+         */
+        setEntry : function(/*ZipEntry*/entry) {
+            entryList.push(entry);
+            entryTable[entry.entryName] = entry;
+            mainHeader.totalEntries = entryList.length;
+        },
+
+        /**
+         * Removes the entry with the given name from the entry list.
+         *
+         * If the entry is a directory, then all nested files and directories will be removed
+         * @param entryName
+         */
+        deleteEntry : function(/*String*/entryName) {
+            var entry = entryTable[entryName];
+            if (entry &amp;&amp; entry.isDirectory) {
+                var _self = this;
+                this.getEntryChildren(entry).forEach(function(child) { ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.adm-zip.deflater" id="apidoc.module.adm-zip.deflater">module adm-zip.deflater</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.deflater.deflater" id="apidoc.element.adm-zip.deflater.deflater">
+        function <span class="apidocSignatureSpan">adm-zip.</span>deflater
+        <span class="apidocSignatureSpan">(inbuf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deflater = function (inbuf) {
+
+    var zlib = require("zlib");
+
+    return {
+        deflate: function () {
+            return new JSDeflater(inbuf).deflate();
+        },
+
+        deflateAsync: function (/*Function*/callback) {
+            var tmp = zlib.createDeflateRaw({chunkSize:(parseInt(inbuf.length / 1024) + 1)*1024}),
+                parts = [], total = 0;
+            tmp.on('data', function(data) {
+                parts.push(data);
+                total += data.length;
+            });
+            tmp.on('end', function() {
+                var buf = new Buffer(total), written = 0;
+                buf.fill(0);
+
+                for (var i = 0; i &lt; parts.length; i++) {
+                    var part = parts[i];
+                    part.copy(buf, written);
+                    written += part.length;
+                }
+                callback &amp;&amp; callback(buf);
+            });
+            tmp.end(inbuf);
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.adm-zip.entryHeader" id="apidoc.module.adm-zip.entryHeader">module adm-zip.entryHeader</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.entryHeader.entryHeader" id="apidoc.element.adm-zip.entryHeader.entryHeader">
+        function <span class="apidocSignatureSpan">adm-zip.</span>entryHeader
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">entryHeader = function () {
+    var _verMade = 0x0A,
+        _version = 0x0A,
+        _flags = 0,
+        _method = 0,
+        _time = 0,
+        _crc = 0,
+        _compressedSize = 0,
+        _size = 0,
+        _fnameLen = 0,
+        _extraLen = 0,
+
+        _comLen = 0,
+        _diskStart = 0,
+        _inattr = 0,
+        _attr = 0,
+        _offset = 0;
+
+    var _dataHeader = {};
+
+    function setTime(val) {
+        var val = new Date(val);
+        _time = (val.getFullYear() - 1980 &amp; 0x7f) &lt;&lt; 25  // b09-16 years from 1980
+            | (val.getMonth() + 1) &lt;&lt; 21                 // b05-08 month
+            | val.getDay() &lt;&lt; 16                         // b00-04 hour
+
+            // 2 bytes time
+            | val.getHours() &lt;&lt; 11    // b11-15 hour
+            | val.getMinutes() &lt;&lt; 5   // b05-10 minute
+            | val.getSeconds() &gt;&gt; 1;  // b00-04 seconds divided by 2
+    }
+
+    setTime(+new Date());
+
+    return {
+        get made () { return _verMade; },
+        set made (val) { _verMade = val; },
+
+        get version () { return _version; },
+        set version (val) { _version = val },
+
+        get flags () { return _flags },
+        set flags (val) { _flags = val; },
+
+        get method () { return _method; },
+        set method (val) { _method = val; },
+
+        get time () { return new Date(
+            ((_time &gt;&gt; 25) &amp; 0x7f) + 1980,
+            ((_time &gt;&gt; 21) &amp; 0x0f) - 1,
+            (_time &gt;&gt; 16) &amp; 0x1f,
+            (_time &gt;&gt; 11) &amp; 0x1f,
+            (_time &gt;&gt; 5) &amp; 0x3f,
+            (_time &amp; 0x1f) &lt;&lt; 1
+        );
+        },
+        set time (val) {
+            setTime(val);
+        },
+
+        get crc () { return _crc; },
+        set crc (val) { _crc = val; },
+
+        get compressedSize () { return _compressedSize; },
+        set compressedSize (val) { _compressedSize = val; },
+
+        get size () { return _size; },
+        set size (val) { _size = val; },
+
+        get fileNameLength () { return _fnameLen; },
+        set fileNameLength (val) { _fnameLen = val; },
+
+        get extraLength () { return _extraLen },
+        set extraLength (val) { _extraLen = val; },
+
+        get commentLength () { return _comLen },
+        set commentLength (val) { _comLen = val },
+
+        get diskNumStart () { return _diskStart },
+        set diskNumStart (val) { _diskStart = val },
+
+        get inAttr () { return _inattr },
+        set inAttr (val) { _inattr = val },
+
+        get attr () { return _attr },
+        set attr (val) { _attr = val },
+
+        get offset () { return _offset },
+        set offset (val) { _offset = val },
+
+        get encripted () { return (_flags &amp; 1) == 1 },
+
+        get entryHeaderSize () {
+            return Constants.CENHDR + _fnameLen + _extraLen + _comLen;
+        },
+
+        get realDataOffset () {
+            return _offset + Constants.LOCHDR + _dataHeader.fnameLen + _dataHeader.extraLen;
+        },
+
+        get dataHeader () {
+            return _dataHeader;
+        },
+
+        loadDataHeaderFromBinary : function(/*Buffer*/input) {
+            var data = input.slice(_offset, _offset + Constants.LOCHDR);
+            // 30 bytes and should start with "PK\003\004"
+            if (data.readUInt32LE(0) != Constants.LOCSIG) {
+                throw Utils.Errors.INVALID_LOC;
+            }
+            _dataHeader = {
+                // version needed to extract
+                version : data.readUInt16LE(Constants.LOCVER),
+                // general purpose bit flag
+                flags : data.readUInt16LE(Constants.LOCFLG),
+                // compression method
+                method : data.readUInt16LE(Constants.LOCHOW),
+                // modification time (2 bytes time, 2 bytes date)
+                time : data.readUInt32LE(Constants.LOCTIM),
+                // uncompressed file crc-32 value
+                crc : data.readUInt32LE(Constants.LOCCRC),
+                // compressed size
+                compressedSize : data.readUInt32LE(Constants.LOCSIZ),
+                // uncompressed size ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.adm-zip.fattr" id="apidoc.module.adm-zip.fattr">module adm-zip.fattr</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.fattr.fattr" id="apidoc.element.adm-zip.fattr.fattr">
+        function <span class="apidocSignatureSpan">adm-zip.</span>fattr
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fattr = function (path) {
+
+    var _path = path || "",
+        _permissions = 0,
+        _obj = newAttr(),
+        _stat = null;
+
+    function newAttr() {
+        return {
+            directory : false,
+            readonly : false,
+            hidden : false,
+            executable : false,
+            mtime : 0,
+            atime : 0
+        }
+    }
+
+    if (_path &amp;&amp; fs.existsSync(_path)) {
+        _stat = fs.statSync(_path);
+        _obj.directory = _stat.isDirectory();
+        _obj.mtime = _stat.mtime;
+        _obj.atime = _stat.atime;
+        _obj.executable = !!(1 &amp; parseInt ((_stat.mode &amp; parseInt ("777", 8)).toString (8)[0]));
+        _obj.readonly = !!(2 &amp; parseInt ((_stat.mode &amp; parseInt ("777", 8)).toString (8)[0]));
+        _obj.hidden = pth.basename(_path)[0] === ".";
+    } else {
+        console.warn("Invalid path: " + _path)
+    }
+
+    return {
+
+        get directory () {
+            return _obj.directory;
+        },
+
+        get readOnly () {
+            return _obj.readonly;
+        },
+
+        get hidden () {
+            return _obj.hidden;
+        },
+
+        get mtime () {
+            return _obj.mtime;
+        },
+
+        get atime () {
+           return _obj.atime;
+        },
+
+
+        get executable () {
+            return _obj.executable;
+        },
+
+        decodeAttributes : function(val) {
+
+        },
+
+        encodeAttributes : function (val) {
+
+        },
+
+        toString : function() {
+           return '{\n' +
+               '\t"path" : "' + _path + ",\n" +
+               '\t"isDirectory" : ' + _obj.directory + ",\n" +
+               '\t"isReadOnly" : ' + _obj.readonly + ",\n" +
+               '\t"isHidden" : ' + _obj.hidden + ",\n" +
+               '\t"isExecutable" : ' + _obj.executable + ",\n" +
+               '\t"mTime" : ' + _obj.mtime + "\n" +
+               '\t"aTime" : ' + _obj.atime + "\n" +
+           '}';
+        }
+    }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.adm-zip.inflater" id="apidoc.module.adm-zip.inflater">module adm-zip.inflater</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.inflater.inflater" id="apidoc.element.adm-zip.inflater.inflater">
+        function <span class="apidocSignatureSpan">adm-zip.</span>inflater
+        <span class="apidocSignatureSpan">(inbuf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inflater = function (inbuf) {
+    var zlib = require("zlib");
+    return {
+        inflateAsync : function(/*Function*/callback) {
+            var tmp = zlib.createInflateRaw(),
+                parts = [], total = 0;
+            tmp.on('data', function(data) {
+                parts.push(data);
+                total += data.length;
+            });
+            tmp.on('end', function() {
+                var buf = new Buffer(total), written = 0;
+                buf.fill(0);
+
+                for (var i = 0; i &lt; parts.length; i++) {
+                    var part = parts[i];
+                    part.copy(buf, written);
+                    written += part.length;
+                }
+                callback &amp;&amp; callback(buf);
+            });
+            tmp.end(inbuf)
+        },
+
+        inflate : function(/*Buffer*/outputBuffer) {
+            var x = {
+                x: new JSInflater(inbuf)
+            };
+            x.x.inflate(outputBuffer);
+            delete(x.x);
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.adm-zip.mainHeader" id="apidoc.module.adm-zip.mainHeader">module adm-zip.mainHeader</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.mainHeader.mainHeader" id="apidoc.element.adm-zip.mainHeader.mainHeader">
+        function <span class="apidocSignatureSpan">adm-zip.</span>mainHeader
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mainHeader = function () {
+    var _volumeEntries = 0,
+        _totalEntries = 0,
+        _size = 0,
+        _offset = 0,
+        _commentLength = 0;
+
+    return {
+        get diskEntries () { return _volumeEntries },
+        set diskEntries (/*Number*/val) { _volumeEntries = _totalEntries = val; },
+
+        get totalEntries () { return _totalEntries },
+        set totalEntries (/*Number*/val) { _totalEntries = _volumeEntries = val; },
+
+        get size () { return _size },
+        set size (/*Number*/val) { _size = val; },
+
+        get offset () { return _offset },
+        set offset (/*Number*/val) { _offset = val; },
+
+        get commentLength () { return _commentLength },
+        set commentLength (/*Number*/val) { _commentLength = val; },
+
+        get mainHeaderSize () {
+            return Constants.ENDHDR + _commentLength;
+        },
+
+        loadFromBinary : function(/*Buffer*/data) {
+            // data should be 22 bytes and start with "PK 05 06"
+            if (data.length != Constants.ENDHDR || data.readUInt32LE(0) != Constants.ENDSIG)
+                throw Utils.Errors.INVALID_END;
+
+            // number of entries on this volume
+            _volumeEntries = data.readUInt16LE(Constants.ENDSUB);
+            // total number of entries
+            _totalEntries = data.readUInt16LE(Constants.ENDTOT);
+            // central directory size in bytes
+            _size = data.readUInt32LE(Constants.ENDSIZ);
+            // offset of first CEN header
+            _offset = data.readUInt32LE(Constants.ENDOFF);
+            // zip file comment length
+            _commentLength = data.readUInt16LE(Constants.ENDCOM);
+        },
+
+        toBinary : function() {
+           var b = new Buffer(Constants.ENDHDR + _commentLength);
+            // "PK 05 06" signature
+            b.writeUInt32LE(Constants.ENDSIG, 0);
+            b.writeUInt32LE(0, 4);
+            // number of entries on this volume
+            b.writeUInt16LE(_volumeEntries, Constants.ENDSUB);
+            // total number of entries
+            b.writeUInt16LE(_totalEntries, Constants.ENDTOT);
+            // central directory size in bytes
+            b.writeUInt32LE(_size, Constants.ENDSIZ);
+            // offset of first CEN header
+            b.writeUInt32LE(_offset, Constants.ENDOFF);
+            // zip file comment length
+            b.writeUInt16LE(_commentLength, Constants.ENDCOM);
+            // fill comment memory with spaces so no garbage is left there
+            b.fill(" ", Constants.ENDHDR);
+
+            return b;
+        },
+
+        toString : function() {
+            return '{\n' +
+                '\t"diskEntries" : ' + _volumeEntries + ",\n" +
+                '\t"totalEntries" : ' + _totalEntries + ",\n" +
+                '\t"size" : ' + _size + " bytes,\n" +
+                '\t"offset" : 0x' + _offset.toString(16).toUpperCase() + ",\n" +
+                '\t"commentLength" : 0x' + _commentLength + "\n" +
+            '}';
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.adm-zip.toString" id="apidoc.module.adm-zip.toString">module adm-zip.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.toString.toString" id="apidoc.element.adm-zip.toString.toString">
+        function <span class="apidocSignatureSpan">adm-zip.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	var AdmZip = require('adm-zip');
+
+	// reading archives
+	var zip = new AdmZip("./my_file.zip");
+	var zipEntries = zip.getEntries(); // an array of ZipEntry records
+
+	zipEntries.forEach(function(zipEntry) {
+	    console.log(zipEntry.<span class="apidocCodeKeywordSpan">toString</span>()); // outputs zip entries information
+		if (zipEntry.entryName == "my_file.txt") {
+		     console.log(zipEntry.data.toString('utf8'));
+		}
+	});
+	// outputs the content of some_folder/my_file.txt
+	console.log(zip.readAsText("some_folder/my_file.txt"));
+	// extracts the specified file to the specified location
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.adm-zip.utils" id="apidoc.module.adm-zip.utils">module adm-zip.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.utils.FileAttr" id="apidoc.element.adm-zip.utils.FileAttr">
+        function <span class="apidocSignatureSpan">adm-zip.utils.</span>FileAttr
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">FileAttr = function (path) {
+
+    var _path = path || "",
+        _permissions = 0,
+        _obj = newAttr(),
+        _stat = null;
+
+    function newAttr() {
+        return {
+            directory : false,
+            readonly : false,
+            hidden : false,
+            executable : false,
+            mtime : 0,
+            atime : 0
+        }
+    }
+
+    if (_path &amp;&amp; fs.existsSync(_path)) {
+        _stat = fs.statSync(_path);
+        _obj.directory = _stat.isDirectory();
+        _obj.mtime = _stat.mtime;
+        _obj.atime = _stat.atime;
+        _obj.executable = !!(1 &amp; parseInt ((_stat.mode &amp; parseInt ("777", 8)).toString (8)[0]));
+        _obj.readonly = !!(2 &amp; parseInt ((_stat.mode &amp; parseInt ("777", 8)).toString (8)[0]));
+        _obj.hidden = pth.basename(_path)[0] === ".";
+    } else {
+        console.warn("Invalid path: " + _path)
+    }
+
+    return {
+
+        get directory () {
+            return _obj.directory;
+        },
+
+        get readOnly () {
+            return _obj.readonly;
+        },
+
+        get hidden () {
+            return _obj.hidden;
+        },
+
+        get mtime () {
+            return _obj.mtime;
+        },
+
+        get atime () {
+           return _obj.atime;
+        },
+
+
+        get executable () {
+            return _obj.executable;
+        },
+
+        decodeAttributes : function(val) {
+
+        },
+
+        encodeAttributes : function (val) {
+
+        },
+
+        toString : function() {
+           return '{\n' +
+               '\t"path" : "' + _path + ",\n" +
+               '\t"isDirectory" : ' + _obj.directory + ",\n" +
+               '\t"isReadOnly" : ' + _obj.readonly + ",\n" +
+               '\t"isHidden" : ' + _obj.hidden + ",\n" +
+               '\t"isExecutable" : ' + _obj.executable + ",\n" +
+               '\t"mTime" : ' + _obj.mtime + "\n" +
+               '\t"aTime" : ' + _obj.atime + "\n" +
+           '}';
+        }
+    }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.utils.crc32" id="apidoc.element.adm-zip.utils.crc32">
+        function <span class="apidocSignatureSpan">adm-zip.utils.</span>crc32
+        <span class="apidocSignatureSpan">(buf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">crc32 = function (buf) {
+    var b = new Buffer(4);
+    if (!crcTable.length) {
+        for (var n = 0; n &lt; 256; n++) {
+            var c = n;
+            for (var k = 8; --k &gt;= 0;)  //
+                if ((c &amp; 1) != 0)  { c = 0xedb88320 ^ (c &gt;&gt;&gt; 1); } else { c = c &gt;&gt;&gt; 1; }
+            if (c &lt; 0) {
+                b.writeInt32LE(c, 0);
+                c = b.readUInt32LE(0);
+            }
+            crcTable[n] = c;
+        }
+    }
+    var crc = 0, off = 0, len = buf.length, c1 = ~crc;
+    while(--len &gt;= 0) c1 = crcTable[(c1 ^ buf[off++]) &amp; 0xff] ^ (c1 &gt;&gt;&gt; 8);
+    crc = ~c1;
+    b.writeInt32LE(crc &amp; 0xffffffff, 0);
+    return b.readUInt32LE(0);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    _entryHeader.loadDataHeaderFromBinary(input);
+    return input.slice(_entryHeader.realDataOffset, _entryHeader.realDataOffset + _entryHeader.compressedSize)
+}
+
+function crc32OK(data) {
+    // if bit 3 (0x08) of the general-purpose flags field is set, then the CRC-32 and file sizes are not known when the header is
+ written
+    if (_entryHeader.flags &amp; 0x8 != 0x8) {
+       if (Utils.<span class="apidocCodeKeywordSpan">crc32</span>(data) != _entryHeader.crc) {
+           return false;
+       }
+    } else {
+        // @TODO: load and check data descriptor header
+        // The fields in the local header are filled with zero, and the CRC-32 and size are appended in a 12-byte structure
+        // (optionally preceded by a 4-byte signature) immediately after the compressed data:
+    }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.utils.findFiles" id="apidoc.element.adm-zip.utils.findFiles">
+        function <span class="apidocSignatureSpan">adm-zip.utils.</span>findFiles
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">findFiles = function (path) {
+    return findSync(path, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			localPath = localPath.split("\\").join("/"); //windows fix
+            localPath = pth.normalize(localPath);
+            if (localPath.charAt(localPath.length - 1) != "/")
+                localPath += "/";
+
+            if (fs.existsSync(localPath)) {
+
+                var items = Utils.<span class="apidocCodeKeywordSpan">findFiles</span>(localPath),
+                    self = this;
+
+                if (items.length) {
+                    items.forEach(function(path) {
+						var p = path.split("\\").join("/").replace( new RegExp(localPath, 'i'), ""); //windows
+ fix
+if (filter(p)) {
+    if (p.charAt(p.length - 1) !== "/") {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.utils.getAttributes" id="apidoc.element.adm-zip.utils.getAttributes">
+        function <span class="apidocSignatureSpan">adm-zip.utils.</span>getAttributes
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getAttributes = function (path) {
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.utils.makeDir" id="apidoc.element.adm-zip.utils.makeDir">
+        function <span class="apidocSignatureSpan">adm-zip.utils.</span>makeDir
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">makeDir = function (path) {
+    mkdirSync(path);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+overwrite = overwrite || false;
+if (!_zip) {
+    throw Utils.Errors.NO_ZIP;
+}
+
+_zip.entries.forEach(function(entry) {
+    if (entry.isDirectory) {
+        Utils.<span class="apidocCodeKeywordSpan">makeDir</span>(pth.resolve(targetPath, entry.entryName.toString()));
+        return;
+    }
+    var content = entry.getData();
+    if (!content) {
+        throw Utils.Errors.CANT_EXTRACT_FILE + "2";
+    }
+    Utils.writeFileTo(pth.resolve(targetPath, entry.entryName.toString()), content, overwrite);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.utils.methodToString" id="apidoc.element.adm-zip.utils.methodToString">
+        function <span class="apidocSignatureSpan">adm-zip.utils.</span>methodToString
+        <span class="apidocSignatureSpan">(method)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">methodToString = function (method) {
+    switch (method) {
+        case Constants.STORED:
+            return 'STORED (' + method + ')';
+        case Constants.DEFLATED:
+            return 'DEFLATED (' + method + ')';
+        default:
+            return 'UNSUPPORTED (' + method + ')';
+    }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+},
+
+toString : function() {
+    return '{\n' +
+        '\t"made" : ' + _verMade + ",\n" +
+        '\t"version" : ' + _version + ",\n" +
+        '\t"flags" : ' + _flags + ",\n" +
+        '\t"method" : ' + Utils.<span class="apidocCodeKeywordSpan">methodToString</span>(_method) + ",\n" +
+        '\t"time" : ' + _time + ",\n" +
+        '\t"crc" : 0x' + _crc.toString(16).toUpperCase() + ",\n" +
+        '\t"compressedSize" : ' + _compressedSize + " bytes,\n" +
+        '\t"size" : ' + _size + " bytes,\n" +
+        '\t"fileNameLength" : ' + _fnameLen + ",\n" +
+        '\t"extraLength" : ' + _extraLen + " bytes,\n" +
+        '\t"commentLength" : ' + _comLen + " bytes,\n" +
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.utils.setAttributes" id="apidoc.element.adm-zip.utils.setAttributes">
+        function <span class="apidocSignatureSpan">adm-zip.utils.</span>setAttributes
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setAttributes = function (path) {
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.utils.toBuffer" id="apidoc.element.adm-zip.utils.toBuffer">
+        function <span class="apidocSignatureSpan">adm-zip.utils.</span>toBuffer
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toBuffer = function (input) {
+    if (Buffer.isBuffer(input)) {
+        return input;
+    } else {
+        if (input.length == 0) {
+            return new Buffer(0)
+        }
+        return new Buffer(input, 'utf8');
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	var zip = new AdmZip();
+	
+	// add file directly
+	zip.addFile("test.txt", new Buffer("inner content of the file"), "entry comment goes here");
+	// add local file
+	zip.addLocalFile("/home/me/some_picture.png");
+	// get everything as a buffer
+	var willSendthis = zip.<span class="apidocCodeKeywordSpan">toBuffer</span>();
+	// or write everything to disk
+	zip.writeZip(/*target file name*/"/home/me/files.zip");
+	
+	
+	// ... more examples in the wiki
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.utils.writeFileTo" id="apidoc.element.adm-zip.utils.writeFileTo">
+        function <span class="apidocSignatureSpan">adm-zip.utils.</span>writeFileTo
+        <span class="apidocSignatureSpan">(path, content, overwrite, attr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeFileTo = function (path, content, overwrite, attr) {
+    if (fs.existsSync(path)) {
+        if (!overwrite)
+            return false; // cannot overwite
+
+        var stat = fs.statSync(path);
+        if (stat.isDirectory()) {
+            return false;
+        }
+    }
+    var folder = pth.dirname(path);
+    if (!fs.existsSync(folder)) {
+        mkdirSync(folder);
+    }
+
+    var fd;
+    try {
+        fd = fs.openSync(path, 'w', 438); // 0666
+    } catch(e) {
+        fs.chmodSync(path, 438);
+        fd = fs.openSync(path, 'w', 438);
+    }
+    if (fd) {
+        fs.writeSync(fd, content, 0, content.length, 0);
+        fs.closeSync(fd);
+    }
+    fs.chmodSync(path, attr || 438);
+    return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    var children = _zip.getEntryChildren(item);
+    children.forEach(function(child) {
+        if (child.isDirectory) return;
+        var content = child.getData();
+        if (!content) {
+            throw Utils.Errors.CANT_EXTRACT_FILE;
+        }
+        Utils.<span class="apidocCodeKeywordSpan">writeFileTo</span>(pth.resolve(targetPath, maintainEntryPath ? child.entryName
+ : child.entryName.substr(item.entryName.length)), content, overwrite);
+    });
+    return true;
+}
+
+var content = item.getData();
+if (!content) throw Utils.Errors.CANT_EXTRACT_FILE;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.utils.writeFileToAsync" id="apidoc.element.adm-zip.utils.writeFileToAsync">
+        function <span class="apidocSignatureSpan">adm-zip.utils.</span>writeFileToAsync
+        <span class="apidocSignatureSpan">(path, content, overwrite, attr, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeFileToAsync = function (path, content, overwrite, attr, callback) {
+    if(typeof attr === 'function') {
+        callback = attr;
+        attr = undefined;
+    }
+
+    fs.exists(path, function(exists) {
+        if(exists &amp;&amp; !overwrite)
+            return callback(false);
+
+        fs.stat(path, function(err, stat) {
+            if(exists &amp;&amp;stat.isDirectory()) {
+                return callback(false);
+            }
+
+            var folder = pth.dirname(path);
+            fs.exists(folder, function(exists) {
+                if(!exists)
+                    mkdirSync(folder);
+
+                fs.open(path, 'w', 438, function(err, fd) {
+                    if(err) {
+                        fs.chmod(path, 438, function(err) {
+                            fs.open(path, 'w', 438, function(err, fd) {
+                                fs.write(fd, content, 0, content.length, 0, function(err, written, buffer) {
+                                    fs.close(fd, function(err) {
+                                        fs.chmod(path, attr || 438, function() {
+                                            callback(true);
+                                        })
+                                    });
+                                });
+                            });
+                        })
+                    } else {
+                        if(fd) {
+                            fs.write(fd, content, 0, content.length, 0, function(err, written, buffer) {
+                                fs.close(fd, function(err) {
+                                    fs.chmod(path, attr || 438, function() {
+                                        callback(true);
+                                    })
+                                });
+                            });
+                        } else {
+                            fs.chmod(path, attr || 438, function() {
+                                callback(true);
+                            })
+                        }
+                    }
+                });
+            })
+        })
+    })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+                entry.getDataAsync(function(content) {
+                    if(i &lt;= 0) return;
+                    if (!content) {
+i = 0;
+callback(new Error(Utils.Errors.CANT_EXTRACT_FILE + "2"));
+return;
+                    }
+                    Utils.<span class="apidocCodeKeywordSpan">writeFileToAsync</span>(pth.resolve(targetPath, entry.entryName.toString
+()), content, overwrite, function(succ) {
+if(i &lt;= 0) return;
+
+if(!succ) {
+    i = 0;
+    callback(new Error('Unable to write'));
+    return;
+}
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.adm-zip.zipEntry" id="apidoc.module.adm-zip.zipEntry">module adm-zip.zipEntry</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.zipEntry.zipEntry" id="apidoc.element.adm-zip.zipEntry.zipEntry">
+        function <span class="apidocSignatureSpan">adm-zip.</span>zipEntry
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">zipEntry = function (input) {
+
+    var _entryHeader = new Headers.EntryHeader(),
+        _entryName = new Buffer(0),
+        _comment = new Buffer(0),
+        _isDirectory = false,
+        uncompressedData = null,
+        _extra = new Buffer(0);
+
+    function getCompressedDataFromZip() {
+        if (!input || !Buffer.isBuffer(input)) {
+            return new Buffer(0);
+        }
+        _entryHeader.loadDataHeaderFromBinary(input);
+        return input.slice(_entryHeader.realDataOffset, _entryHeader.realDataOffset + _entryHeader.compressedSize)
+    }
+
+    function crc32OK(data) {
+        // if bit 3 (0x08) of the general-purpose flags field is set, then the CRC-32 and file sizes are not known when the header
+ is written
+        if (_entryHeader.flags &amp; 0x8 != 0x8) {
+           if (Utils.crc32(data) != _entryHeader.crc) {
+               return false;
+           }
+        } else {
+            // @TODO: load and check data descriptor header
+            // The fields in the local header are filled with zero, and the CRC-32 and size are appended in a 12-byte structure
+            // (optionally preceded by a 4-byte signature) immediately after the compressed data:
+        }
+        return true;
+    }
+
+    function decompress(/*Boolean*/async, /*Function*/callback, /*String*/pass) {
+        if(typeof callback === 'undefined' &amp;&amp; typeof async === 'string') {
+            pass=async;
+            async=void 0;
+        }
+        if (_isDirectory) {
+            if (async &amp;&amp; callback) {
+                callback(new Buffer(0), Utils.Errors.DIRECTORY_CONTENT_ERROR); //si added error.
+            }
+            return new Buffer(0);
+        }
+
+        var compressedData = getCompressedDataFromZip();
+
+        if (compressedData.length == 0) {
+            if (async &amp;&amp; callback) callback(compressedData, Utils.Errors.NO_DATA);//si added error.
+            return compressedData;
+        }
+
+        var data = new Buffer(_entryHeader.size);
+        data.fill(0);
+
+        switch (_entryHeader.method) {
+            case Utils.Constants.STORED:
+                compressedData.copy(data);
+                if (!crc32OK(data)) {
+                    if (async &amp;&amp; callback) callback(data, Utils.Errors.BAD_CRC);//si added error
+                    return Utils.Errors.BAD_CRC;
+                } else {//si added otherwise did not seem to return data.
+                    if (async &amp;&amp; callback) callback(data);
+                    return data;
+                }
+                break;
+            case Utils.Constants.DEFLATED:
+                var inflater = new Methods.Inflater(compressedData);
+                if (!async) {
+                    inflater.inflate(data);
+                    if (!crc32OK(data)) {
+                        console.warn(Utils.Errors.BAD_CRC + " " + _entryName.toString())
+                    }
+                    return data;
+                } else {
+                    inflater.inflateAsync(function(result) {
+                        result.copy(data, 0);
+                        if (!crc32OK(data)) {
+                            if (callback) callback(data, Utils.Errors.BAD_CRC); //si added error
+                        } else { //si added otherwise did not seem to return data.
+                            if (callback) callback(data);
+                        }
+                    })
+                }
+                break;
+            default:
+                if (async &amp;&amp; callback) callback(new Buffer(0), Utils.Errors.UNKNOWN_METHOD);
+                return Utils.Errors.UNKNOWN_METHOD;
+        }
+    }
+
+    function compress(/*Boolean*/async, /*Function*/callback) {
+        if ((!uncompressedData || !uncompressedData.length) &amp;&amp; Buffer.isBuffer(input)) {
+            // no data set or the data wasn't changed to require recompression
+            if (async &amp;&amp; callback) callback(getCompressedDataFromZip());
+            return getCompressedDataFromZip();
+        }
+
+        if (uncompressedData.length &amp;&amp; !_isDirectory) {
+            var compressedD ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.adm-zip.zipFile" id="apidoc.module.adm-zip.zipFile">module adm-zip.zipFile</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.adm-zip.zipFile.zipFile" id="apidoc.element.adm-zip.zipFile.zipFile">
+        function <span class="apidocSignatureSpan">adm-zip.</span>zipFile
+        <span class="apidocSignatureSpan">(input, inputType)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">zipFile = function (input, inputType) {
+    var entryList = [],
+        entryTable = {},
+        _comment = new Buffer(0),
+        filename = "",
+        fs = require("fs"),
+        inBuffer = null,
+        mainHeader = new Headers.MainHeader();
+
+    if (inputType == Utils.Constants.FILE) {
+        // is a filename
+        filename = input;
+        inBuffer = fs.readFileSync(filename);
+        readMainHeader();
+    } else if (inputType == Utils.Constants.BUFFER) {
+        // is a memory buffer
+        inBuffer = input;
+        readMainHeader();
+    } else {
+        // none. is a new file
+    }
+
+    function readEntries() {
+        entryTable = {};
+        entryList = new Array(mainHeader.diskEntries);  // total number of entries
+        var index = mainHeader.offset;  // offset of first CEN header
+        for(var i = 0; i &lt; entryList.length; i++) {
+
+            var tmp = index,
+                entry = new ZipEntry(inBuffer);
+            entry.header = inBuffer.slice(tmp, tmp += Utils.Constants.CENHDR);
+
+            entry.entryName = inBuffer.slice(tmp, tmp += entry.header.fileNameLength);
+
+            if (entry.header.extraLength) {
+                entry.extra = inBuffer.slice(tmp, tmp += entry.header.extraLength);
+            }
+
+            if (entry.header.commentLength)
+                entry.comment = inBuffer.slice(tmp, tmp + entry.header.commentLength);
+
+            index += entry.header.entryHeaderSize;
+
+            entryList[i] = entry;
+            entryTable[entry.entryName] = entry;
+        }
+    }
+
+    function readMainHeader() {
+        var i = inBuffer.length - Utils.Constants.ENDHDR, // END header size
+            n = Math.max(0, i - 0xFFFF), // 0xFFFF is the max zip file comment length
+            endOffset = -1; // Start offset of the END header
+
+        for (i; i &gt;= n; i--) {
+            if (inBuffer[i] != 0x50) continue; // quick check that the byte is 'P'
+            if (inBuffer.readUInt32LE(i) == Utils.Constants.ENDSIG) { // "PK\005\006"
+                endOffset = i;
+                break;
+            }
+        }
+        if (!~endOffset)
+            throw Utils.Errors.INVALID_FORMAT;
+
+        mainHeader.loadFromBinary(inBuffer.slice(endOffset, endOffset + Utils.Constants.ENDHDR));
+        if (mainHeader.commentLength) {
+            _comment = inBuffer.slice(endOffset + Utils.Constants.ENDHDR);
+        }
+        readEntries();
+    }
+
+    return {
+        /**
+         * Returns an array of ZipEntry objects existent in the current opened archive
+         * @return Array
+         */
+        get entries () {
+            return entryList;
+        },
+
+        /**
+         * Archive comment
+         * @return {String}
+         */
+        get comment () { return _comment.toString(); },
+        set comment(val) {
+            mainHeader.commentLength = val.length;
+            _comment = val;
+        },
+
+        /**
+         * Returns a reference to the entry with the given name or null if entry is inexistent
+         *
+         * @param entryName
+         * @return ZipEntry
+         */
+        getEntry : function(/*String*/entryName) {
+            return entryTable[entryName] || null;
+        },
+
+        /**
+         * Adds the given entry to the entry list
+         *
+         * @param entry
+         */
+        setEntry : function(/*ZipEntry*/entry) {
+            entryList.push(entry);
+            entryTable[entry.entryName] = entry;
+            mainHeader.totalEntries = entryList.length;
+        },
+
+        /**
+         * Removes the entry with the given name from the entry list.
+         *
+         * If the entry is a directory, then all nested files and directories will be removed
+         * @param entryName
+         */
+        deleteEntry : function(/*String*/entryName) {
+            var entry = entryTable[entryName];
+            if (entry &amp;&amp; entry.isDirectory) {
+                var _self = this;
+                this.getEntryChildren(entry).forEach(function(child) { ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
