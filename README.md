@@ -1,6 +1,6 @@
 # npmdoc-adm-zip
 
-#### api documentation for  [adm-zip (v0.4.7)](http://github.com/cthackers/adm-zip)  [![npm package](https://img.shields.io/npm/v/npmdoc-adm-zip.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-adm-zip) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-adm-zip.svg)](https://travis-ci.org/npmdoc/node-npmdoc-adm-zip)
+#### basic api documentation for  [adm-zip (v0.4.7)](http://github.com/cthackers/adm-zip)  [![npm package](https://img.shields.io/npm/v/npmdoc-adm-zip.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-adm-zip) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-adm-zip.svg)](https://travis-ci.org/npmdoc/node-npmdoc-adm-zip)
 
 #### A Javascript implementation of zip for nodejs. Allows user to create or extract zip files both in memory or to/from disk
 
@@ -74,7 +74,8 @@
         "url": "git+https://github.com/cthackers/adm-zip.git"
     },
     "scripts": {},
-    "version": "0.4.7"
+    "version": "0.4.7",
+    "bin": {}
 }
 ```
 
